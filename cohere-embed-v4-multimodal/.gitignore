@@ -1,0 +1,17 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Temporary files
+notebooks/temp_spec_images/
+temp_spec_images/
+**/*.png
+
+product_specs_pdfs/.DS_Store
