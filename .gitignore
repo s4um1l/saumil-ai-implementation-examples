@@ -63,7 +63,7 @@ logs/
 
 ./shared/templates/example-readme-template.md
 ./shared/templates/requirements-template.md
-
+./shared/templates/README.md
 # Temporary files
 cohere-embed-v4-multimodal/notebooks/temp_spec_images/
 **/temp_spec_images/
