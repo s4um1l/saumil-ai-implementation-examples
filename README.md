@@ -16,6 +16,7 @@ This repository serves as a practical guide for implementing AI solutions that d
 | Example | Description | Key Technologies | Status |
 |---------|-------------|------------------|--------|
 | [Cohere Embed v4 Multimodal](./cohere-embed-v4-multimodal/) | Implementation examples for Cohere's Embed v4 multimodal embedding model for text and image embedding | Python, Cohere, Jupyter | ✅ Available |
+| [RAG Chunking Strategies](./chunking-strategies/) | Implementation examples demonstrating various text chunking strategies for RAG systems | Python, Jupyter | ✅ Available |
 ## 🚀 Getting Started
 
 1. Clone this repository:
