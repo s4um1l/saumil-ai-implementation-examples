@@ -1,0 +1,1 @@
+{"indexed_fields":{"specs.display.type":"keyword","release_year":"integer","category":"keyword","product_name":{"type":"text","tokenizer":"word","min_token_len":2,"max_token_len":15,"lowercase":true},"price":"float"},"skip_rocksdb":null}
