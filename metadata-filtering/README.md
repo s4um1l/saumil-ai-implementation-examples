@@ -1,6 +1,6 @@
 # Metadata Filtering in Vector Search
 
-A comprehensive implementation guide demonstrating metadata filtering capabilities across different vector databases (Milvus, Qdrant), providing practical examples and performance considerations for engineering teams.
+A comprehensive implementation guide demonstrating metadata filtering capabilities across different vector databases (Milvus, Qdrant, Pinecone, Weaviate), providing practical examples and performance considerations for engineering teams.
 
 ## 📝 Description
 
@@ -20,9 +20,9 @@ This repository contains practical examples of metadata filtering in vector data
 
 ### Prerequisites
 
-#### Docker (for Qdrant example)
+#### Docker (for Qdrant and Weaviate examples)
 
-Docker is required to run the Qdrant server locally.
+Docker is required to run the Qdrant and Weaviate servers locally.
 
 ##### macOS/Windows
 Install [Docker Desktop](https://www.docker.com/products/docker-desktop/)
@@ -32,6 +32,10 @@ Install [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 sudo apt-get update
 sudo apt-get install docker.io
 ```
+
+#### API Keys (for Pinecone example)
+
+You'll need a Pinecone API key to run the Pinecone example. Sign up for a free account at [Pinecone](https://www.pinecone.io/).
 
 ### Python Environment Setup
 
@@ -65,11 +69,41 @@ uv sync
 
 The implementation includes the following Jupyter notebooks:
 
+- [Pinecone Metadata Filtering](./01_pinecone_metadata_filtering.ipynb): Explores Pinecone's metadata filtering capabilities, including namespace management, structured queries, and performance optimizations with proper indexing.
+
+- [Weaviate Metadata Filtering](./02_weaviate_metadata_filtering.ipynb): Demonstrates Weaviate's GraphQL-based filtering approach, working with schema definitions, and leveraging both BM25 and vector search in hybrid queries.
+
 - [Milvus Metadata Filtering](./03_milvus_metadata_filtering.ipynb): Demonstrates metadata filtering in Milvus, including setup with Milvus Lite, defining schemas with scalar and vector fields, and performing filtered vector searches.
 
 - [Qdrant Metadata Filtering](./04_qdrant_metadata_filtering.ipynb): Showcases Qdrant's powerful metadata filtering capabilities, handling of nested JSON payloads, and flexible query syntax with `must`, `should`, and `must_not` conditions.
 
 ## 🚀 Running the Examples
+
+### Pinecone Example
+The Pinecone example connects to Pinecone's cloud service:
+
+```bash
+# Set your Pinecone API key as an environment variable
+export PINECONE_API_KEY=your_pinecone_api_key
+
+# Run the notebook
+jupyter notebook 01_pinecone_metadata_filtering.ipynb
+```
+
+### Weaviate Example
+The Weaviate example requires a running Weaviate instance:
+
+```bash
+# Start Weaviate server with Docker
+docker run -d --name weaviate-demo \
+    -p 8080:8080 \
+    -e AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED=true \
+    -e PERSISTENCE_DATA_PATH="/var/lib/weaviate" \
+    semitechnologies/weaviate:1.19.6
+
+# Run the notebook
+jupyter notebook 02_weaviate_metadata_filtering.ipynb
+```
 
 ### Milvus Example
 The Milvus example uses Milvus Lite, which runs embedded in Python:
