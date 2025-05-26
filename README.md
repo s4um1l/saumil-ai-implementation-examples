@@ -17,6 +17,8 @@ This repository serves as a practical guide for implementing AI solutions that d
 |---------|-------------|------------------|--------|
 | [Cohere Embed v4 Multimodal](./cohere-embed-v4-multimodal/) | Implementation examples for Cohere's Embed v4 multimodal embedding model for text and image embedding | Python, Cohere, Jupyter | ✅ Available |
 | [RAG Chunking Strategies](./chunking-strategies/) | Implementation examples demonstrating various text chunking strategies for RAG systems | Python, Jupyter | ✅ Available |
+| [Graph RAG](./graph-rag/) | Advanced RAG implementation using knowledge graphs for investment intelligence | Python, Neo4j, LangChain | ✅ Available |
+| [Metadata Filtering](./metadata-filtering/) | Comprehensive examples of metadata filtering across vector databases (Milvus, Qdrant, Pinecone, Weaviate) | Python, Vector DBs, Jupyter | ✅ Available |
 ## 🚀 Getting Started
 
 1. Clone this repository:
