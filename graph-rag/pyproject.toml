@@ -1,0 +1,87 @@
+[project]
+name = "advanced-graph-rag-investment-intelligence"
+version = "0.1.0"
+description = "Python environment for the 'Advanced Graph RAG: Powering Investment Intelligence with Knowledge Graphs' notebook."
+authors = [
+    { name = "Saumil Srivastava", email = "saumil@saumilsrivastava.ai" }, # Placeholder, replace if desired
+]
+requires-python = ">=3.9"  # Based on common modern Python usage, adjust if a specific version (like 3.11 from logs) is critical.
+
+dependencies = [
+    "langchain==0.1.17",
+    "neo4j==5.20.0",
+    "openai==1.78.1",          # Version from notebook output log
+    "tiktoken==0.7.0",
+    "json-repair==0.39.1",
+    "yfinance==0.2.61",        # Version from notebook output log
+    "pyvis==0.3.2",            # Version from notebook output log
+    "requests-ratelimiter==0.4.2",
+    "langchain-openai==0.1.7", # Version from notebook output log
+    "datasets==3.6.0",         # Version from the explicit upgrade cell's log
+    "google-genai<1.15.0",     # As per notebook instruction, typically resolves to 1.14.0
+    "httpx==0.27.2",           # Specific version due to google-genai compatibility
+    "networkx",                # Implicitly used by pyvis and graph operations
+    "ipython",                 # For Jupyter environment, pyvis dependency
+    "jupyter",                 # To run the notebook
+    "pandas",                  # Used for data handling
+    "langsmith",               # langchain dependency
+    # Transitive dependencies are usually handled by uv, but including key ones from logs for robustness
+    "PyYAML>=5.3",
+    "SQLAlchemy<3,>=1.4",
+    "aiohttp<4.0.0,>=3.8.3",
+    "dataclasses-json<0.7,>=0.5.7",
+    "jsonpatch<2.0,>=1.33",
+    "langchain-community<0.1,>=0.0.36",
+    "langchain-core<0.2.0,>=0.1.48",
+    "langchain-text-splitters<0.1,>=0.0.1",
+    "numpy<2,>=1",             # Note: The notebook output had a thinc vs numpy conflict warning with numpy 1.26.4 and thinc 8.3.6 requiring numpy >=2.0.0.
+                               # For strict reproduction, numpy==1.26.4 might be used, or resolve thinc if it's a direct dependency.
+                               # For now, being less strict to allow uv to resolve. If issues arise, pin numpy or thinc.
+    "pydantic<3,>=1",
+    "requests<3,>=2",
+    "tenacity<9.0.0,>=8.1.0",
+    "pytz",
+    "regex>=2022.1.18",
+    "pyrate-limiter<3.0,>=2.8",
+    "anyio<5,>=3.5.0",
+    "distro<2,>=1.7.0",
+    "jiter<1,>=0.4.0",
+    "sniffio",
+    "tqdm>4",
+    "typing-extensions<5,>=4.11",
+    "multitasking>=0.0.7",
+    "platformdirs>=2.0.0",
+    "frozendict>=2.3.4",
+    "peewee>=3.16.2",
+    "beautifulsoup4>=4.11.1",
+    "curl_cffi>=0.7",          # yfinance dependency
+    "protobuf>=3.19.0",
+    "websockets>=13.0",
+    "jinja2>=2.9.6",
+    "jsonpickle>=1.4.1",
+    "pyarrow>=8.0.0",          # datasets dependency, notebook log shows pyarrow>=15.0.0 from datasets 3.6.0
+    "dill<0.3.9,>=0.3.0",      # datasets 3.6.0 dependency
+    "xxhash",
+    "multiprocess<0.70.17",    # datasets 3.6.0 dependency
+    "fsspec<=2025.3.0,>=2023.1.0", # datasets 3.6.0 dependency
+    "huggingface-hub>=0.24.0", # datasets 3.6.0 dependency
+    "packaging"
+]
+
+[project.optional-dependencies]
+# Add development or other optional dependencies here if needed
+# dev = [
+#   "pytest",
+# ]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/advanced_graph_rag_investment_intelligence"]
+
+[tool.uv]
+# uv can often infer Python version from requires-python or local environment.
+# You can specify a target interpreter if needed:
+# python = "3.11"
